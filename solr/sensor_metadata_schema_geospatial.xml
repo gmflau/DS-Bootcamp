@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema name="autoSolrSchema" version="1.5">
+<types>
+<fieldType class="org.apache.solr.schema.TextField" name="TextField">
+<analyzer>
+<tokenizer class="solr.StandardTokenizerFactory"/>
+<filter class="solr.LowerCaseFilterFactory"/>
+</analyzer>
+</fieldType>
+<fieldType class="org.apache.solr.schema.StrField" name="StrField"/>
+<fieldType class="org.apache.solr.schema.TrieDateField" name="TrieDateField"/>
+<fieldType name="location" class="solr.LatLonType" subFieldSuffix="_coordinate"/>
+<fieldType name="double" class="solr.TrieDoubleField" precisionStep="0" positionIncrementGap="0"/>
+</types>
+<fields>
+<field indexed="true" multiValued="false" name="vendor_id" stored="true" type="TextField"/>
+<field indexed="true" multiValued="true" name="floor" stored="true" type="StrField"/>
+<field indexed="true" multiValued="false" name="sensor_id" stored="true" type="StrField"/>
+<field indexed="true" multiValued="true" name="sensor_type" stored="true" type="StrField"/>
+<field indexed="true" multiValued="true" name="deployment_date" stored="true" type="TrieDateField"/>
+<field indexed="true" multiValued="true" name="wing" stored="true" type="StrField"/>
+<field indexed="true" multiValued="false" name="retirement_date" stored="true" type="TrieDateField"/>
+<field indexed="true" multiValued="true" name="hive" stored="true" type="StrField"/>
+<field indexed="true" multiValued="false" name="manufacture_date" stored="true" type="TrieDateField"/>
+<field indexed="true" multiValued="false" name="maintenance_history" stored="true" type="TextField"/>
+<dynamicField name="*_coordinate"  type="double" indexed="true"  stored="false"/>
+<field indexed="true" multiValued="true" name="geolocation" stored="true" type="location"/>
+</fields>
+<uniqueKey>(sensor_id)</uniqueKey>
+</schema>
+
