@@ -66,11 +66,11 @@ object DailyRollup {
         map( x => (x._1, x._2, xDaysBefore))
 
 
-      for (item <- min_temp_xDay_rdd.collect()){
-        println("Next min_temp elements Record: ")
-        print(item.toString())
-        println()
-      }
+//      for (item <- min_temp_xDay_rdd.collect()){
+//        println("Next min_temp elements Record: ")
+//        print(item.toString())
+//        println()
+//      }
 
 
       // Saving temperature data into Cassandra

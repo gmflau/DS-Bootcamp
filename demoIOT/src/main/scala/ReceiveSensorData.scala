@@ -31,10 +31,7 @@ object ReceiveSensorData {
     words.foreachRDD( rdd => {
 
 
-//      val utcTime = DateTime.now().withZone(DateTimeZone.UTC)
-//      val utcTime = DateTime.now().minusDays(0).withZone(DateTimeZone.UTC)
-//      val utcTime = DateTime.now().plusDays(0).withZone(DateTimeZone.UTC)
-      val utcTime = DateTime.now().minusDays(1).withZone(DateTimeZone.UTC)
+      val utcTime = DateTime.now().minusDays(0).withZone(DateTimeZone.UTC)
       println("Sensor collection = " + utcTime.toString())
 
       // Calculate avg temperature
@@ -84,11 +81,6 @@ object ReceiveSensorData {
         map( x => (x._1 , x._2, utcTime))
 
 
-//      for (item <- average_temp_rdd.collect()){
-//          println("Next 3 temperature elements Record")
-//          print(item.toString())
-//          println()
-//      }
 
       // Saving temperature data into Cassandra
       average_temp_rdd.saveToCassandra("iot", "sensor_stat_tw30_sw1",
