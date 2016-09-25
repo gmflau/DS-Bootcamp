@@ -1,0 +1,875 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n### Let\u0027s dig out some sensor data in Cassandra using CQL",
+      "dateUpdated": "Sep 5, 2016 11:25:48 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1473140715860_-630684488",
+      "id": "20160905-224515_1578133111",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch3\u003eLet\u0027s dig out some sensor data in Cassandra using CQL\u003c/h3\u003e\n"
+      },
+      "dateCreated": "Sep 5, 2016 10:45:15 PM",
+      "dateStarted": "Sep 5, 2016 11:25:49 PM",
+      "dateFinished": "Sep 5, 2016 11:25:49 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "select sensor_id, reading_time, \nmin_temperature, avg_temperature, max_temperature,\nmin_movement, avg_movement, max_movement, \nmin_humidity, avg_humidity, max_humidity \nfrom iot.sensor_stat_tw30_sw1 limit 10;",
+      "dateUpdated": "Sep 16, 2016 10:32:55 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "sensor_id",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "reading_time",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "sensor_id",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "reading_time",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1473140634789_1495514555",
+      "id": "20160905-224354_1238753973",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "sensor_id\treading_time\tmin_temperature\tavg_temperature\tmax_temperature\tmin_movement\tavg_movement\tmax_movement\tmin_humidity\tavg_humidity\tmax_humidity\n78ea86e3-73f3-11e6-8750-b8e85621f222\tThu Sep 15 07:37:19 PDT 2016\t1.19\t55.874004\t118.53\t0.0\t48.966667\t100.0\tnull\t49.976826\tnull\n78ea86e3-73f3-11e6-8750-b8e85621f222\tThu Sep 15 07:36:19 PDT 2016\t1.41\t56.00458\t118.53\t1.0\t51.229168\t100.0\t5.42\t50.857914\t92.67\n78ea86e3-73f3-11e6-8750-b8e85621f222\tThu Sep 15 07:35:19 PDT 2016\t1.41\t51.987503\t114.52\t1.0\t52.555557\t100.0\t5.42\t51.0\t89.66\n78ea86e3-73f3-11e6-8750-b8e85621f222\tThu Sep 15 07:34:19 PDT 2016\t1.41\t48.803757\t107.58\t1.0\t53.75\t94.0\t10.62\t56.402496\t89.66\n78ea86e3-73f3-11e6-8750-b8e85621f222\tThu Sep 15 07:33:19 PDT 2016\t18.05\t56.81001\t107.58\t4.0\t58.416668\t93.0\t14.35\t52.126667\t86.67\n78ea86e3-73f3-11e6-8750-b8e85621f222\tThu Sep 15 07:24:11 PDT 2016\t1.86\t51.515835\t109.37\tnull\tnull\tnull\tnull\tnull\tnull\n78ea86e3-73f3-11e6-8750-b8e85621f222\tWed Sep 14 21:30:46 PDT 2016\t2.64\t69.27639\t118.18\t10.0\t48.11111\t99.0\t0.45\t52.020283\t97.14\n78ea86e3-73f3-11e6-8750-b8e85621f222\tWed Sep 14 21:29:46 PDT 2016\t2.64\t72.767914\t111.3\t10.0\t48.541668\t93.0\t6.59\t47.50709\t89.7\n78ea86e3-73f3-11e6-8750-b8e85621f222\tWed Sep 14 21:28:46 PDT 2016\t50.82\t87.618324\t111.3\t10.0\t46.083332\t91.0\t21.46\t55.635\t89.7\n78ea86e3-73f3-11e6-8750-b8e85621f222\tTue Sep 13 21:56:42 PDT 2016\t0.27\t62.97526\t119.33\t0.0\t48.275\t100.0\t0.9\t47.13208\t95.8\n"
+      },
+      "dateCreated": "Sep 5, 2016 10:43:54 PM",
+      "dateStarted": "Sep 16, 2016 10:32:56 AM",
+      "dateFinished": "Sep 16, 2016 10:32:56 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## Find out the average temperature of a particular sensor on a specific date range (9/12 - 9/14)",
+      "dateUpdated": "Sep 15, 2016 1:01:27 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1473142292605_-1322013676",
+      "id": "20160905-231132_637048868",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003eFind out the average temperature of a particular sensor on a specific date range (9/12 - 9/14)\u003c/h2\u003e\n"
+      },
+      "dateCreated": "Sep 5, 2016 11:11:32 PM",
+      "dateStarted": "Sep 15, 2016 1:01:27 PM",
+      "dateFinished": "Sep 15, 2016 1:01:27 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "select reading_time, avg_temperature from iot.sensor_stat_tw30_sw1 \nwhere sensor_id \u003d \u002778ea86e3-73f3-11e6-8750-b8e85621f222\u0027\nand reading_time \u003e\u003d \u00272016-09-12 00:00:00+0000\u0027 and reading_time \u003c\u003d \u00272016-09-14 23:59:59+0000\u0027;",
+      "dateUpdated": "Sep 15, 2016 1:00:55 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "multiBarChart",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "reading_time",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "avg_temperature",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "reading_time",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "avg_temperature",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1473140653476_373602086",
+      "id": "20160905-224413_773265770",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "reading_time\tavg_temperature\nTue Sep 13 21:56:42 PDT 2016\t62.97526\nTue Sep 13 21:55:42 PDT 2016\t62.98893\nTue Sep 13 21:54:42 PDT 2016\t63.677326\nTue Sep 13 21:53:42 PDT 2016\t65.71699\nTue Sep 13 21:52:42 PDT 2016\t65.53858\nTue Sep 13 21:51:42 PDT 2016\t64.68542\nTue Sep 13 21:50:42 PDT 2016\t65.55216\nTue Sep 13 21:49:42 PDT 2016\t65.73\nTue Sep 13 21:48:42 PDT 2016\t64.376114\nTue Sep 13 21:47:42 PDT 2016\t62.6875\nTue Sep 13 21:46:42 PDT 2016\t57.23833\nTue Sep 13 21:42:50 PDT 2016\t60.456486\nTue Sep 13 21:41:50 PDT 2016\t61.68803\nTue Sep 13 21:40:50 PDT 2016\t59.20241\nTue Sep 13 21:39:50 PDT 2016\t59.126316\nTue Sep 13 21:38:50 PDT 2016\t60.578793\nTue Sep 13 21:37:50 PDT 2016\t63.255623\nTue Sep 13 21:36:50 PDT 2016\t64.76557\nTue Sep 13 21:35:50 PDT 2016\t62.637737\nTue Sep 13 21:34:50 PDT 2016\t63.937893\nTue Sep 13 21:33:50 PDT 2016\t56.66286\nTue Sep 13 15:50:21 PDT 2016\t63.783794\nTue Sep 13 15:49:21 PDT 2016\t62.06236\nTue Sep 13 15:48:21 PDT 2016\t61.612072\nTue Sep 13 15:47:21 PDT 2016\t58.88942\nTue Sep 13 15:46:21 PDT 2016\t57.82913\nTue Sep 13 15:45:21 PDT 2016\t58.28554\nTue Sep 13 15:44:21 PDT 2016\t59.112312\nTue Sep 13 15:43:21 PDT 2016\t57.1328\nTue Sep 13 15:42:21 PDT 2016\t58.34843\nTue Sep 13 15:41:21 PDT 2016\t58.491203\nTue Sep 13 15:40:21 PDT 2016\t54.03952\nTue Sep 13 15:39:21 PDT 2016\t61.354446\nMon Sep 12 00:12:11 PDT 2016\t66.8475\nMon Sep 12 00:11:11 PDT 2016\t68.23417\nMon Sep 12 00:06:06 PDT 2016\t49.001675\nMon Sep 12 00:05:06 PDT 2016\t48.18167\nMon Sep 12 00:02:21 PDT 2016\t57.915424\nMon Sep 12 00:01:21 PDT 2016\t56.54646\nMon Sep 12 00:00:21 PDT 2016\t55.55778\nSun Sep 11 23:59:21 PDT 2016\t52.87167\nSun Sep 11 23:58:21 PDT 2016\t41.935\nSun Sep 11 23:53:38 PDT 2016\t65.07333\nSun Sep 11 23:52:38 PDT 2016\t58.057922\nSun Sep 11 23:51:38 PDT 2016\t50.656673\nSun Sep 11 23:47:57 PDT 2016\t66.18026\nSun Sep 11 23:46:57 PDT 2016\t64.63916\nSun Sep 11 23:45:57 PDT 2016\t62.713505\nSun Sep 11 23:44:57 PDT 2016\t62.322834\nSun Sep 11 23:43:57 PDT 2016\t62.432495\nSun Sep 11 23:42:57 PDT 2016\t60.010838\nSun Sep 11 23:41:57 PDT 2016\t61.401592\nSun Sep 11 23:40:57 PDT 2016\t60.31842\nSun Sep 11 23:39:57 PDT 2016\t60.016407\nSun Sep 11 23:38:57 PDT 2016\t58.09683\nSun Sep 11 23:37:57 PDT 2016\t58.092537\nSun Sep 11 23:36:57 PDT 2016\t59.298\nSun Sep 11 23:35:57 PDT 2016\t57.777237\nSun Sep 11 23:34:57 PDT 2016\t57.457233\nSun Sep 11 23:33:57 PDT 2016\t55.53608\nSun Sep 11 23:32:57 PDT 2016\t57.47474\nSun Sep 11 23:31:57 PDT 2016\t56.532772\nSun Sep 11 23:30:57 PDT 2016\t56.532078\nSun Sep 11 23:29:57 PDT 2016\t55.68983\nSun Sep 11 23:28:57 PDT 2016\t55.832706\nSun Sep 11 23:27:57 PDT 2016\t53.054726\nSun Sep 11 23:26:57 PDT 2016\t49.323757\n"
+      },
+      "dateCreated": "Sep 5, 2016 10:44:13 PM",
+      "dateStarted": "Sep 15, 2016 1:00:55 PM",
+      "dateFinished": "Sep 15, 2016 1:00:55 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## Find out the min temperature of a particular sensor on a specific date",
+      "dateUpdated": "Sep 13, 2016 7:11:44 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1473141231881_-1613013016",
+      "id": "20160905-225351_892021181",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003eFind out the min temperature of a particular sensor on a specific date\u003c/h2\u003e\n"
+      },
+      "dateCreated": "Sep 5, 2016 10:53:51 PM",
+      "dateStarted": "Sep 13, 2016 7:11:45 PM",
+      "dateFinished": "Sep 13, 2016 7:11:45 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "select reading_time, min_temperature from iot.sensor_stat_tw30_sw1 \nwhere sensor_id \u003d \u002778ea86e3-73f3-11e6-8750-b8e85621f222\u0027\nand reading_time \u003e\u003d \u00272016-09-14 00:00:00+0000\u0027 and reading_time \u003c\u003d \u00272016-09-14 23:59:59+0000\u0027;",
+      "dateUpdated": "Sep 21, 2016 2:22:51 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "multiBarChart",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "reading_time",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "min_temperature",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "reading_time",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "min_temperature",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1473142628557_-2032615367",
+      "id": "20160905-231708_599090307",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "reading_time\tmin_temperature\nTue Sep 13 21:56:42 PDT 2016\t0.27\nTue Sep 13 21:55:42 PDT 2016\t0.27\nTue Sep 13 21:54:42 PDT 2016\t2.19\nTue Sep 13 21:53:42 PDT 2016\t2.19\nTue Sep 13 21:52:42 PDT 2016\t2.19\nTue Sep 13 21:51:42 PDT 2016\t2.19\nTue Sep 13 21:50:42 PDT 2016\t3.41\nTue Sep 13 21:49:42 PDT 2016\t3.41\nTue Sep 13 21:48:42 PDT 2016\t3.41\nTue Sep 13 21:47:42 PDT 2016\t3.41\nTue Sep 13 21:46:42 PDT 2016\t3.41\nTue Sep 13 21:42:50 PDT 2016\t0.86\nTue Sep 13 21:41:50 PDT 2016\t0.86\nTue Sep 13 21:40:50 PDT 2016\t0.86\nTue Sep 13 21:39:50 PDT 2016\t0.86\nTue Sep 13 21:38:50 PDT 2016\t0.86\nTue Sep 13 21:37:50 PDT 2016\t0.86\nTue Sep 13 21:36:50 PDT 2016\t0.86\nTue Sep 13 21:35:50 PDT 2016\t0.86\nTue Sep 13 21:34:50 PDT 2016\t0.86\nTue Sep 13 21:33:50 PDT 2016\t0.86\n"
+      },
+      "dateCreated": "Sep 5, 2016 11:17:08 PM",
+      "dateStarted": "Sep 14, 2016 10:00:10 PM",
+      "dateFinished": "Sep 14, 2016 10:00:10 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## Find out the max humidity of a particular sensor on a specific date",
+      "dateUpdated": "Sep 5, 2016 11:25:49 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1473142681468_-338288480",
+      "id": "20160905-231801_1188875728",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003eFind out the max humidity of a particular sensor on a specific date\u003c/h2\u003e\n"
+      },
+      "dateCreated": "Sep 5, 2016 11:18:01 PM",
+      "dateStarted": "Sep 5, 2016 11:25:49 PM",
+      "dateFinished": "Sep 5, 2016 11:25:49 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "select sensor_id, reading_time, max_humidity from iot.sensor_stat_tw30_sw1 \nwhere sensor_id \u003d \u002778ea86e3-73f3-11e6-8750-b8e85621f222\u0027\nand reading_time \u003e\u003d \u00272016-09-14 00:00:00+0000\u0027 and reading_time \u003c\u003d \u00272016-09-14 23:59:59+0000\u0027;",
+      "dateUpdated": "Sep 15, 2016 1:03:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "multiBarChart",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "reading_time",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "max_humidity",
+              "index": 2.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "sensor_id",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "reading_time",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1473142680170_-46648814",
+      "id": "20160905-231800_954556083",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "sensor_id\treading_time\tmax_humidity\n78ea86e3-73f3-11e6-8750-b8e85621f222\tTue Sep 13 21:56:42 PDT 2016\t95.8\n78ea86e3-73f3-11e6-8750-b8e85621f222\tTue Sep 13 21:55:42 PDT 2016\t98.47\n78ea86e3-73f3-11e6-8750-b8e85621f222\tTue Sep 13 21:54:42 PDT 2016\t98.47\n78ea86e3-73f3-11e6-8750-b8e85621f222\tTue Sep 13 21:53:42 PDT 2016\t98.47\n78ea86e3-73f3-11e6-8750-b8e85621f222\tTue Sep 13 21:52:42 PDT 2016\t98.47\n78ea86e3-73f3-11e6-8750-b8e85621f222\tTue Sep 13 21:51:42 PDT 2016\t98.47\n78ea86e3-73f3-11e6-8750-b8e85621f222\tTue Sep 13 21:50:42 PDT 2016\t98.47\n78ea86e3-73f3-11e6-8750-b8e85621f222\tTue Sep 13 21:49:42 PDT 2016\t98.47\n78ea86e3-73f3-11e6-8750-b8e85621f222\tTue Sep 13 21:48:42 PDT 2016\t98.47\n78ea86e3-73f3-11e6-8750-b8e85621f222\tTue Sep 13 21:47:42 PDT 2016\t98.47\n78ea86e3-73f3-11e6-8750-b8e85621f222\tTue Sep 13 21:46:42 PDT 2016\t98.47\n78ea86e3-73f3-11e6-8750-b8e85621f222\tTue Sep 13 21:42:50 PDT 2016\t95.99\n78ea86e3-73f3-11e6-8750-b8e85621f222\tTue Sep 13 21:41:50 PDT 2016\t94.54\n78ea86e3-73f3-11e6-8750-b8e85621f222\tTue Sep 13 21:40:50 PDT 2016\t94.54\n78ea86e3-73f3-11e6-8750-b8e85621f222\tTue Sep 13 21:39:50 PDT 2016\t94.54\n78ea86e3-73f3-11e6-8750-b8e85621f222\tTue Sep 13 21:38:50 PDT 2016\t94.39\n78ea86e3-73f3-11e6-8750-b8e85621f222\tTue Sep 13 21:37:50 PDT 2016\t94.39\n78ea86e3-73f3-11e6-8750-b8e85621f222\tTue Sep 13 21:36:50 PDT 2016\t93.7\n78ea86e3-73f3-11e6-8750-b8e85621f222\tTue Sep 13 21:35:50 PDT 2016\t93.13\n78ea86e3-73f3-11e6-8750-b8e85621f222\tTue Sep 13 21:34:50 PDT 2016\t93.13\n78ea86e3-73f3-11e6-8750-b8e85621f222\tTue Sep 13 21:33:50 PDT 2016\t93.13\n"
+      },
+      "dateCreated": "Sep 5, 2016 11:18:00 PM",
+      "dateStarted": "Sep 15, 2016 1:02:23 PM",
+      "dateFinished": "Sep 15, 2016 1:02:23 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Let\u0027s look at the daily rollup sensor data",
+      "dateUpdated": "Sep 15, 2016 1:02:20 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1473142679993_327711866",
+      "id": "20160905-231759_428676300",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch3\u003eLet\u0027s look at the daily rollup sensor data\u003c/h3\u003e\n"
+      },
+      "dateCreated": "Sep 5, 2016 11:17:59 PM",
+      "dateStarted": "Sep 15, 2016 1:02:20 PM",
+      "dateFinished": "Sep 15, 2016 1:02:20 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%cassandra\nselect * from iot.daily_rollup limit 30;",
+      "dateUpdated": "Sep 15, 2016 10:54:39 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "sensor_id",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "date",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "sensor_id",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "date",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1473778116956_-1019991229",
+      "id": "20160913-074836_1354951791",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "sensor_id\tdate\tavg_humidity\tavg_movement\tavg_temperature\tisactive\tmax_humidity\tmax_movement\tmax_temperature\tmin_humidity\tmin_movement\tmin_temperature\tsolr_query\n78ea86e3-73f3-11e6-8750-b8e85621f222\tTue Sep 13 17:00:00 PDT 2016\t49.28628\t44.522507\t59.245083\tnull\t99.04\t98.0\t119.75\t3.83\t0.0\t110.22\tnull\n78ea86e3-73f3-11e6-8750-b8e85621f222\tMon Sep 12 17:00:00 PDT 2016\t50.262146\t49.847687\t57.694508\tnull\t99.92\t100.0\t119.95\t0.21\t0.0\t88.25\tnull\n78ea86e3-73f3-11e6-8750-b8e85621f222\tSun Sep 11 17:00:00 PDT 2016\t50.9121\t47.586193\t63.94443\tnull\t99.81\t99.0\t119.55\t0.54\t0.0\t117.11\tnull\n78ea86e3-73f3-11e6-8750-b8e85621f222\tSat Sep 10 17:00:00 PDT 2016\t51.354897\t51.403713\t64.70142\tnull\t98.02\t99.0\t119.92\t0.23\t0.0\t110.45\tnull\n78ead5eb-73f3-11e6-816b-b8e85621f222\tTue Sep 13 17:00:00 PDT 2016\t49.938908\t45.400974\t62.142513\tnull\t98.91\t100.0\t119.93\t0.38\t0.0\t113.04\tnull\n78ead5eb-73f3-11e6-816b-b8e85621f222\tMon Sep 12 17:00:00 PDT 2016\t52.403603\t49.24349\t60.851814\tnull\t99.88\t100.0\t119.41\t0.25\t0.0\t109.88\tnull\n78ead5eb-73f3-11e6-816b-b8e85621f222\tSun Sep 11 17:00:00 PDT 2016\t50.13419\t49.068512\t62.533092\tnull\t99.54\t100.0\t119.86\t0.82\t1.0\t115.43\tnull\n78ead5eb-73f3-11e6-816b-b8e85621f222\tSat Sep 10 17:00:00 PDT 2016\t50.768646\t50.389706\t60.974533\tnull\t98.81\t100.0\t119.57\t0.03\t0.0\t111.56\tnull\n78e8a0e8-73f3-11e6-aa8c-b8e85621f222\tTue Sep 13 17:00:00 PDT 2016\t52.107132\t51.594738\t63.079025\tnull\t97.82\t99.0\t119.19\t0.09\t0.0\t100.99\tnull\n78e8a0e8-73f3-11e6-aa8c-b8e85621f222\tMon Sep 12 17:00:00 PDT 2016\t50.578487\t47.44582\t60.883236\tnull\t98.98\t100.0\t119.9\t0.16\t0.0\t98.0\tnull\n78e8a0e8-73f3-11e6-aa8c-b8e85621f222\tSun Sep 11 17:00:00 PDT 2016\t50.84839\t47.597927\t64.79604\tnull\t99.48\t100.0\t118.84\t0.75\t0.0\t116.35\tnull\n78e8a0e8-73f3-11e6-aa8c-b8e85621f222\tSat Sep 10 17:00:00 PDT 2016\t49.191\t52.237743\t59.36757\tnull\t99.72\t100.0\t119.83\t0.6\t0.0\t119.22\tnull\n78e8633d-73f3-11e6-8d1d-b8e85621f222\tTue Sep 13 17:00:00 PDT 2016\t53.323795\t54.907177\t59.414185\tnull\t99.94\t100.0\t119.55\t0.15\t0.0\t107.59\tnull\n78e8633d-73f3-11e6-8d1d-b8e85621f222\tMon Sep 12 17:00:00 PDT 2016\t51.286915\t48.63067\t63.16048\tnull\t99.81\t100.0\t119.7\t0.04\t0.0\t106.52\tnull\n78e8633d-73f3-11e6-8d1d-b8e85621f222\tSun Sep 11 17:00:00 PDT 2016\t49.46644\t51.83661\t57.635612\tnull\t99.75\t99.0\t118.62\t1.09\t1.0\t116.16\tnull\n78e8633d-73f3-11e6-8d1d-b8e85621f222\tSat Sep 10 17:00:00 PDT 2016\t47.36842\t46.151222\t60.759895\tnull\t99.97\t100.0\t118.89\t0.03\t0.0\t103.63\tnull\n78e96a99-73f3-11e6-90b1-b8e85621f222\tTue Sep 13 17:00:00 PDT 2016\t49.768627\t47.717205\t63.045673\tnull\t99.79\t100.0\t119.04\t1.29\t0.0\t115.8\tnull\n78e96a99-73f3-11e6-90b1-b8e85621f222\tMon Sep 12 17:00:00 PDT 2016\t52.274235\t48.69659\t61.027256\tnull\t99.82\t100.0\t119.95\t0.16\t0.0\t106.03\tnull\n78e96a99-73f3-11e6-90b1-b8e85621f222\tSun Sep 11 17:00:00 PDT 2016\t52.745903\t48.97453\t61.816376\tnull\t99.91\t100.0\t119.26\t0.23\t0.0\t115.57\tnull\n78e96a99-73f3-11e6-90b1-b8e85621f222\tSat Sep 10 17:00:00 PDT 2016\t51.776554\t46.361187\t57.842762\tnull\t99.62\t100.0\t118.6\t0.1\t0.0\t114.74\tnull\n78e9fff8-73f3-11e6-b66e-b8e85621f222\tTue Sep 13 17:00:00 PDT 2016\t56.738514\t51.35716\t51.54797\tnull\t99.96\t100.0\t119.94\t1.51\t0.0\t97.67\tnull\n78e9fff8-73f3-11e6-b66e-b8e85621f222\tMon Sep 12 17:00:00 PDT 2016\t50.361156\t48.500603\t55.975464\tnull\t99.96\t100.0\t119.59\t0.44\t0.0\t90.99\tnull\n78e9fff8-73f3-11e6-b66e-b8e85621f222\tSun Sep 11 17:00:00 PDT 2016\t51.561314\t49.72744\t58.17956\tnull\t99.76\t100.0\t119.01\t1.53\t0.0\t106.32\tnull\n78e9fff8-73f3-11e6-b66e-b8e85621f222\tSat Sep 10 17:00:00 PDT 2016\t50.094124\t48.365433\t61.045265\tnull\t98.82\t100.0\t118.94\t0.34\t0.0\t115.48\tnull\n78eace23-73f3-11e6-9228-b8e85621f222\tTue Sep 13 17:00:00 PDT 2016\t49.373936\t48.593174\t53.690136\tnull\t99.81\t100.0\t119.87\t0.54\t1.0\t94.86\tnull\n78eace23-73f3-11e6-9228-b8e85621f222\tMon Sep 12 17:00:00 PDT 2016\t50.826565\t53.76157\t59.68454\tnull\t99.99\t100.0\t119.7\t0.76\t0.0\t102.74\tnull\n78eace23-73f3-11e6-9228-b8e85621f222\tSun Sep 11 17:00:00 PDT 2016\t49.19991\t49.331783\t57.997223\tnull\t99.38\t100.0\t118.93\t0.06\t0.0\t102.92\tnull\n78eace23-73f3-11e6-9228-b8e85621f222\tSat Sep 10 17:00:00 PDT 2016\t50.43358\t51.000374\t58.637733\tnull\t99.6\t100.0\t119.94\t1.82\t0.0\t118.41\tnull\n78e94875-73f3-11e6-86be-b8e85621f222\tTue Sep 13 17:00:00 PDT 2016\t49.15449\t46.54111\t67.000336\tnull\t99.59\t100.0\t119.84\t0.03\t2.0\t117.27\tnull\n78e94875-73f3-11e6-86be-b8e85621f222\tMon Sep 12 17:00:00 PDT 2016\t48.77304\t50.416756\t60.014652\tnull\t99.4\t100.0\t119.94\t0.37\t0.0\t106.27\tnull\n"
+      },
+      "dateCreated": "Sep 13, 2016 7:48:36 AM",
+      "dateStarted": "Sep 15, 2016 10:54:39 AM",
+      "dateFinished": "Sep 15, 2016 10:54:39 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Let\u0027s look at the temperature trend for a particualr sensor (id \u003d \u002778ea86e3-73f3-11e6-8750-b8e85621f222\u0027)",
+      "dateUpdated": "Sep 15, 2016 1:05:13 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1473778323798_-605541687",
+      "id": "20160913-075203_1234370173",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch3\u003eLet\u0027s look at the temperature trend for a particualr sensor (id \u003d \u002778ea86e3-73f3-11e6-8750-b8e85621f222\u0027)\u003c/h3\u003e\n"
+      },
+      "dateCreated": "Sep 13, 2016 7:52:03 AM",
+      "dateStarted": "Sep 15, 2016 1:05:07 PM",
+      "dateFinished": "Sep 15, 2016 1:05:07 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "select date, min_temperature, avg_temperature, max_temperature from iot.daily_rollup where sensor_id \u003d \u002778ea86e3-73f3-11e6-8750-b8e85621f222\u0027;",
+      "dateUpdated": "Sep 15, 2016 11:19:36 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "multiBarChart",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "date",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "min_temperature",
+              "index": 1.0,
+              "aggr": "sum"
+            },
+            {
+              "name": "avg_temperature",
+              "index": 2.0,
+              "aggr": "sum"
+            },
+            {
+              "name": "max_temperature",
+              "index": 3.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "date",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1473778457650_-1406003289",
+      "id": "20160913-075417_691175254",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "date\tmin_temperature\tavg_temperature\tmax_temperature\nWed Sep 14 17:00:00 PDT 2016\t0.27\t62.546585\t119.85\nTue Sep 13 17:00:00 PDT 2016\t0.5\t59.245083\t119.75\nMon Sep 12 17:00:00 PDT 2016\t0.09\t57.694508\t119.95\nSun Sep 11 17:00:00 PDT 2016\t2.38\t63.94443\t119.55\nSat Sep 10 17:00:00 PDT 2016\t0.83\t64.70142\t119.92\n"
+      },
+      "dateCreated": "Sep 13, 2016 7:54:17 AM",
+      "dateStarted": "Sep 15, 2016 11:19:30 AM",
+      "dateFinished": "Sep 15, 2016 11:19:30 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Let\u0027s find out which sensors have daily min_temperture \u003c 50 degree F  [Solr-enabled]",
+      "dateUpdated": "Sep 15, 2016 8:55:26 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1473778491773_1297904712",
+      "id": "20160913-075451_1697238435",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch3\u003eLet\u0027s find out which sensors have daily min_temperture \u0026lt; 50 degree F  [Solr-enabled]\u003c/h3\u003e\n"
+      },
+      "dateCreated": "Sep 13, 2016 7:54:51 AM",
+      "dateStarted": "Sep 15, 2016 8:55:26 AM",
+      "dateFinished": "Sep 15, 2016 8:55:28 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%cassandra\nselect *  from iot.daily_rollup where solr_query \u003d \u0027{\"q\":\"*:*\", \"fq\":\"avg_temperature:[* TO 50]\"}\u0027;",
+      "dateUpdated": "Sep 16, 2016 8:39:42 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 111.11111450195312,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "sensor_id",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "date",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "sensor_id",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "date",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1473778771039_1029348335",
+      "id": "20160913-075931_1182017628",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "sensor_id\tdate\tavg_humidity\tavg_movement\tavg_temperature\tisactive\tmax_humidity\tmax_movement\tmax_temperature\tmin_humidity\tmin_movement\tmin_temperature\tsolr_query\n78eaafd4-73f3-11e6-967f-b8e85621f222\tTue Sep 13 17:00:00 PDT 2016\t43.271393\t48.5211\t44.055058\tnull\t99.34\t100.0\t117.88\t0.21\t0.0\t0.29\tnull\n"
+      },
+      "dateCreated": "Sep 13, 2016 7:59:31 AM",
+      "dateStarted": "Sep 16, 2016 8:39:42 AM",
+      "dateFinished": "Sep 16, 2016 8:39:42 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Find out the hive and floor of this sensor \u003d 78eaafd4-73f3-11e6-967f-b8e85621f222",
+      "dateUpdated": "Sep 15, 2016 8:55:36 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1473806003525_1013533188",
+      "id": "20160913-153323_702454020",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch3\u003eFind out the hive and floor of this sensor \u003d 78eaafd4-73f3-11e6-967f-b8e85621f222\u003c/h3\u003e\n"
+      },
+      "dateCreated": "Sep 13, 2016 3:33:23 PM",
+      "dateStarted": "Sep 15, 2016 8:55:36 AM",
+      "dateFinished": "Sep 15, 2016 8:55:36 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%cassandra\nselect sensor_id, hive, floor from iot.sensor_metadata where sensor_id \u003d \u002778eaafd4-73f3-11e6-967f-b8e85621f222\u0027;\n",
+      "dateUpdated": "Sep 15, 2016 11:19:52 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 111.11111450195312,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "sensor_id",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "hive",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "sensor_id",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "hive",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1473805863593_1138745147",
+      "id": "20160913-153103_1989234166",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "sensor_id\thive\tfloor\n78eaafd4-73f3-11e6-967f-b8e85621f222\t4\t33\n"
+      },
+      "dateCreated": "Sep 13, 2016 3:31:03 PM",
+      "dateStarted": "Sep 15, 2016 11:19:52 AM",
+      "dateFinished": "Sep 15, 2016 11:19:52 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Let\u0027s find sensors in its (78eaafd4-73f3-11e6-967f-b8e85621f222) neighborhood (Hive:4 and Floor:33) [Solr-enabled]",
+      "dateUpdated": "Sep 15, 2016 11:19:57 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1473805975460_-2117999406",
+      "id": "20160913-153255_704287808",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch3\u003eLet\u0027s find sensors in its (78eaafd4-73f3-11e6-967f-b8e85621f222) neighborhood (Hive:4 and Floor:33) [Solr-enabled]\u003c/h3\u003e\n"
+      },
+      "dateCreated": "Sep 13, 2016 3:32:55 PM",
+      "dateStarted": "Sep 15, 2016 11:19:57 AM",
+      "dateFinished": "Sep 15, 2016 11:19:57 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%cassandra\nselect *  from iot.sensor_metadata where solr_query \u003d \u0027{\"q\":\"*:*\", \"fq\":\"(+hive:4 +floor:33)\"}\u0027;",
+      "dateUpdated": "Sep 16, 2016 8:30:26 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 171.11111450195312,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "sensor_id",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "sensor_type",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "sensor_id",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "sensor_type",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1473806575912_-1855129420",
+      "id": "20160913-154255_1788530871",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "sensor_id\tsensor_type\thive\twing\tfloor\tgeolocation\tdeployment_date\tmaintenance_history\tmanufacture_date\tretirement_date\tsolr_query\tvendor_id\n78eaafd4-73f3-11e6-967f-b8e85621f222\ttemperature\t4\tNorth\t33\t37.238754,-76.509674\tWed Mar 30 00:00:00 PDT 2016\tRepalced IC30486. \tSat Dec 27 00:00:00 PST 2014\tFri May 24 00:00:00 PDT 2019\tnull\tPhilips\n78eab163-73f3-11e6-8a18-b8e85621f222\thumidity\t4\tWest\t33\t37.238754,-76.509674\tWed Apr 06 00:00:00 PDT 2016\tRepalced IC666789. \tFri Jan 16 00:00:00 PST 2015\tThu Nov 21 00:00:00 PST 2019\tnull\tHoneywell\n78eab2eb-73f3-11e6-990d-b8e85621f222\ttemperature\t4\tEast\t33\t37.238754,-76.509674\tTue Apr 12 00:00:00 PDT 2016\tServiced without issues. \tSat Oct 11 00:00:00 PDT 2014\tWed Feb 06 00:00:00 PST 2019\tnull\tSamsung\n"
+      },
+      "dateCreated": "Sep 13, 2016 3:42:55 PM",
+      "dateStarted": "Sep 15, 2016 12:13:03 PM",
+      "dateFinished": "Sep 15, 2016 12:13:03 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1474040017485_-2006986495",
+      "id": "20160916-083337_1313995241",
+      "dateCreated": "Sep 16, 2016 8:33:37 AM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "2. GML - Spark : Analytics + Solr-enabled Queries",
+  "id": "2BXPK1BP6",
+  "angularObjects": {
+    "2BVUSYNT7:shared_process": [],
+    "2BVNSCC87:shared_process": [],
+    "2BV5CMDRJ:shared_process": [],
+    "2BURGVYUU:shared_process": [],
+    "2BXASZ6DR:shared_process": [],
+    "2BUPXZDUP:shared_process": [],
+    "2BVT2JK3P:shared_process": [],
+    "2BWHEYP7Q:shared_process": [],
+    "2BVZCXEBF:shared_process": [],
+    "2BUS52J8T:shared_process": [],
+    "2BUPPD2UZ:shared_process": [],
+    "2BXNVQ4BK:shared_process": [],
+    "2BWRV2UGT:shared_process": [],
+    "2BV6MVK7C:shared_process": [],
+    "2BW98HZUC:shared_process": [],
+    "2BWMQWBTP:shared_process": [],
+    "2BWND52DS:shared_process": []
+  },
+  "config": {
+    "looknfeel": "default"
+  },
+  "info": {}
+}

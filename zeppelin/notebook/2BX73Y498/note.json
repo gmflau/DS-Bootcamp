@@ -1,0 +1,426 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n## Create Solr core on TABLE - \"iot.sensor_metadata\"",
+      "dateUpdated": "Sep 7, 2016 1:17:43 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1473236191890_-600707698",
+      "id": "20160907-011631_47238453",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003eCreate Solr core on TABLE - \u0026ldquo;iot.sensor_metadata\u0026rdquo;\u003c/h2\u003e\n"
+      },
+      "dateCreated": "Sep 7, 2016 1:16:31 AM",
+      "dateStarted": "Sep 7, 2016 1:17:42 AM",
+      "dateFinished": "Sep 7, 2016 1:17:42 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sh\ndsetool create_core iot.sensor_metadata generateResources\u003dtrue reindex\u003dtrue",
+      "dateUpdated": "Sep 7, 2016 3:51:01 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sh"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1473183728845_-1831467255",
+      "id": "20160906-104208_642887487",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Sep 6, 2016 10:42:08 AM",
+      "dateStarted": "Sep 7, 2016 3:51:01 PM",
+      "dateFinished": "Sep 7, 2016 3:51:10 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sh\ncd /Users/gilbertlau/demo\ndsetool get_core_schema iot.sensor_metadata \u003e sensor_metadata_schema.xml\ncat sensor_metadata_schema.xml",
+      "dateUpdated": "Sep 7, 2016 1:28:13 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sh"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1473235631296_724391585",
+      "id": "20160907-010711_182931852",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\u003c?xml version\u003d\"1.0\" encoding\u003d\"UTF-8\" standalone\u003d\"no\"?\u003e\n\u003cschema name\u003d\"autoSolrSchema\" version\u003d\"1.5\"\u003e\n\u003ctypes\u003e\n\u003cfieldType class\u003d\"org.apache.solr.schema.TextField\" name\u003d\"TextField\"\u003e\n\u003canalyzer\u003e\n\u003ctokenizer class\u003d\"solr.StandardTokenizerFactory\"/\u003e\n\u003cfilter class\u003d\"solr.LowerCaseFilterFactory\"/\u003e\n\u003c/analyzer\u003e\n\u003c/fieldType\u003e\n\u003cfieldType class\u003d\"org.apache.solr.schema.StrField\" name\u003d\"StrField\"/\u003e\n\u003cfieldType class\u003d\"org.apache.solr.schema.TrieDateField\" name\u003d\"TrieDateField\"/\u003e\n\u003c/types\u003e\n\u003cfields\u003e\n\u003cfield indexed\u003d\"true\" multiValued\u003d\"false\" name\u003d\"vendor_id\" stored\u003d\"true\" type\u003d\"TextField\"/\u003e\n\u003cfield indexed\u003d\"true\" multiValued\u003d\"false\" name\u003d\"floor\" stored\u003d\"true\" type\u003d\"StrField\"/\u003e\n\u003cfield indexed\u003d\"true\" multiValued\u003d\"false\" name\u003d\"sensor_id\" stored\u003d\"true\" type\u003d\"StrField\"/\u003e\n\u003cfield indexed\u003d\"true\" multiValued\u003d\"false\" name\u003d\"geolocation\" stored\u003d\"true\" type\u003d\"StrField\"/\u003e\n\u003cfield indexed\u003d\"true\" multiValued\u003d\"false\" name\u003d\"sensor_type\" stored\u003d\"true\" type\u003d\"StrField\"/\u003e\n\u003cfield indexed\u003d\"true\" multiValued\u003d\"false\" name\u003d\"deployment_date\" stored\u003d\"true\" type\u003d\"TrieDateField\"/\u003e\n\u003cfield indexed\u003d\"true\" multiValued\u003d\"false\" name\u003d\"wing\" stored\u003d\"true\" type\u003d\"StrField\"/\u003e\n\u003cfield indexed\u003d\"true\" multiValued\u003d\"false\" name\u003d\"retirement_date\" stored\u003d\"true\" type\u003d\"TrieDateField\"/\u003e\n\u003cfield indexed\u003d\"true\" multiValued\u003d\"false\" name\u003d\"hive\" stored\u003d\"true\" type\u003d\"StrField\"/\u003e\n\u003cfield indexed\u003d\"true\" multiValued\u003d\"false\" name\u003d\"manufacture_date\" stored\u003d\"true\" type\u003d\"TrieDateField\"/\u003e\n\u003cfield indexed\u003d\"true\" multiValued\u003d\"false\" name\u003d\"maintenance_history\" stored\u003d\"true\" type\u003d\"TextField\"/\u003e\n\u003c/fields\u003e\n\u003cuniqueKey\u003e(sensor_id,sensor_type,hive,wing,floor,geolocation)\u003c/uniqueKey\u003e\n\u003c/schema\u003e\n\n"
+      },
+      "dateCreated": "Sep 7, 2016 1:07:11 AM",
+      "dateStarted": "Sep 7, 2016 1:28:14 AM",
+      "dateFinished": "Sep 7, 2016 1:28:23 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## Modify the auto-generated schema.xml to enable GeoSpatial search",
+      "dateUpdated": "Sep 7, 2016 4:41:57 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1473291631905_-684073963",
+      "id": "20160907-164031_1534188520",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003eModify the auto-generated schema.xml to enable GeoSpatial search\u003c/h2\u003e\n"
+      },
+      "dateCreated": "Sep 7, 2016 4:40:31 PM",
+      "dateStarted": "Sep 7, 2016 4:41:55 PM",
+      "dateFinished": "Sep 7, 2016 4:41:55 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sh\ncd /Users/gilbertlau/demo\ncat sensor_metadata_schema_geospatial.xml\n",
+      "dateUpdated": "Sep 7, 2016 4:40:25 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sh"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1473236139588_2052677248",
+      "id": "20160907-011539_1400065653",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\u003c?xml version\u003d\"1.0\" encoding\u003d\"UTF-8\" standalone\u003d\"no\"?\u003e\n\u003cschema name\u003d\"autoSolrSchema\" version\u003d\"1.5\"\u003e\n\u003ctypes\u003e\n\u003cfieldType class\u003d\"org.apache.solr.schema.TextField\" name\u003d\"TextField\"\u003e\n\u003canalyzer\u003e\n\u003ctokenizer class\u003d\"solr.StandardTokenizerFactory\"/\u003e\n\u003cfilter class\u003d\"solr.LowerCaseFilterFactory\"/\u003e\n\u003c/analyzer\u003e\n\u003c/fieldType\u003e\n\u003cfieldType class\u003d\"org.apache.solr.schema.StrField\" name\u003d\"StrField\"/\u003e\n\u003cfieldType class\u003d\"org.apache.solr.schema.TrieDateField\" name\u003d\"TrieDateField\"/\u003e\n\u003cfieldType name\u003d\"location\" class\u003d\"solr.LatLonType\" subFieldSuffix\u003d\"_coordinate\"/\u003e\n\u003cfieldType name\u003d\"double\" class\u003d\"solr.TrieDoubleField\" precisionStep\u003d\"0\" positionIncrementGap\u003d\"0\"/\u003e\n\u003c/types\u003e\n\u003cfields\u003e\n\u003cfield indexed\u003d\"true\" multiValued\u003d\"false\" name\u003d\"vendor_id\" stored\u003d\"true\" type\u003d\"TextField\"/\u003e\n\u003cfield indexed\u003d\"true\" multiValued\u003d\"true\" name\u003d\"floor\" stored\u003d\"true\" type\u003d\"StrField\"/\u003e\n\u003cfield indexed\u003d\"true\" multiValued\u003d\"false\" name\u003d\"sensor_id\" stored\u003d\"true\" type\u003d\"StrField\"/\u003e\n\u003cfield indexed\u003d\"true\" multiValued\u003d\"true\" name\u003d\"sensor_type\" stored\u003d\"true\" type\u003d\"StrField\"/\u003e\n\u003cfield indexed\u003d\"true\" multiValued\u003d\"true\" name\u003d\"deployment_date\" stored\u003d\"true\" type\u003d\"TrieDateField\"/\u003e\n\u003cfield indexed\u003d\"true\" multiValued\u003d\"true\" name\u003d\"wing\" stored\u003d\"true\" type\u003d\"StrField\"/\u003e\n\u003cfield indexed\u003d\"true\" multiValued\u003d\"false\" name\u003d\"retirement_date\" stored\u003d\"true\" type\u003d\"TrieDateField\"/\u003e\n\u003cfield indexed\u003d\"true\" multiValued\u003d\"true\" name\u003d\"hive\" stored\u003d\"true\" type\u003d\"StrField\"/\u003e\n\u003cfield indexed\u003d\"true\" multiValued\u003d\"false\" name\u003d\"manufacture_date\" stored\u003d\"true\" type\u003d\"TrieDateField\"/\u003e\n\u003cfield indexed\u003d\"true\" multiValued\u003d\"false\" name\u003d\"maintenance_history\" stored\u003d\"true\" type\u003d\"TextField\"/\u003e\n\u003cdynamicField name\u003d\"*_coordinate\"  type\u003d\"double\" indexed\u003d\"true\"  stored\u003d\"false\"/\u003e\n\u003cfield indexed\u003d\"true\" multiValued\u003d\"true\" name\u003d\"geolocation\" stored\u003d\"true\" type\u003d\"location\"/\u003e\n\u003c/fields\u003e\n\u003cuniqueKey\u003e(sensor_id)\u003c/uniqueKey\u003e\n\u003c/schema\u003e\n\n"
+      },
+      "dateCreated": "Sep 7, 2016 1:15:39 AM",
+      "dateStarted": "Sep 7, 2016 4:40:25 PM",
+      "dateFinished": "Sep 7, 2016 4:40:25 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sh\ncd /Users/gilbertlau/demo\ndsetool reload_core iot.sensor_metadata schema\u003d/Users/gilbertlau/demo/sensor_metadata_schema_geospatial.xml reindex\u003dtrue\n",
+      "dateUpdated": "Sep 7, 2016 3:40:51 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sh"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1473236716442_215483161",
+      "id": "20160907-012516_1966753937",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Sep 7, 2016 1:25:16 AM",
+      "dateStarted": "Sep 7, 2016 3:40:51 PM",
+      "dateFinished": "Sep 7, 2016 3:40:58 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## Retrieve sensor information by HIVE using Solr query",
+      "dateUpdated": "Sep 7, 2016 4:43:14 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1473291736788_-859934859",
+      "id": "20160907-164216_1986546609",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003eRetrieve sensor information by HIVE using Solr query\u003c/h2\u003e\n"
+      },
+      "dateCreated": "Sep 7, 2016 4:42:16 PM",
+      "dateStarted": "Sep 7, 2016 4:43:12 PM",
+      "dateFinished": "Sep 7, 2016 4:43:12 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%cassandra\nselect sensor_id, hive, wing, floor from iot.sensor_metadata\nwhere solr_query \u003d \u0027{\"q\":\"*:*\", \"fq\":\"hive:4\"}\u0027 limit 10;\n",
+      "dateUpdated": "Sep 13, 2016 2:20:51 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "sensor_id",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "hive",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "sensor_id",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "hive",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1473290526455_523950277",
+      "id": "20160907-162206_351310485",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "sensor_id\thive\twing\tfloor\n78ea57ab-73f3-11e6-8059-b8e85621f222\t4\tEast\t17\n78ea593a-73f3-11e6-ac17-b8e85621f222\t4\tSouth\t17\n78ea5ac0-73f3-11e6-9505-b8e85621f222\t4\tWest\t17\n78ea5c63-73f3-11e6-80ae-b8e85621f222\t4\tNorth\t18\n78ea5e6b-73f3-11e6-88c0-b8e85621f222\t4\tEast\t18\n78ea6023-73f3-11e6-84b1-b8e85621f222\t4\tWest\t19\n78ea61b5-73f3-11e6-a72d-b8e85621f222\t4\tWest\t19\n78ea6342-73f3-11e6-9035-b8e85621f222\t4\tSouth\t19\n78ea64ca-73f3-11e6-a57d-b8e85621f222\t4\tNorth\t19\n78ea666e-73f3-11e6-b525-b8e85621f222\t4\tEast\t20\n"
+      },
+      "dateCreated": "Sep 7, 2016 4:22:06 PM",
+      "dateStarted": "Sep 13, 2016 2:20:51 PM",
+      "dateFinished": "Sep 13, 2016 2:20:51 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## Let\u0027s do a geospatial search within 100km radius of a particular [latitude,longitude] : [37.238754,-76.509674]",
+      "dateUpdated": "Sep 8, 2016 4:20:40 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1473291445140_1022258405",
+      "id": "20160907-163725_491213170",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003eLet\u0027s do a geospatial search within 100km radius of a particular [latitude,longitude] : [37.238754,-76.509674]\u003c/h2\u003e\n"
+      },
+      "dateCreated": "Sep 7, 2016 4:37:25 PM",
+      "dateStarted": "Sep 8, 2016 4:20:40 PM",
+      "dateFinished": "Sep 8, 2016 4:20:40 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%cassandra\nselect sensor_id,sensor_type, hive, wing, floor, deployment_date, maintenance_history from iot.sensor_metadata \nwhere solr_query \u003d \u0027{\"q\":\"*:*\", \"fq\":\"+{!geofilt pt\u003d\\\"37.238754,-76.509674\\\" sfield\u003dgeolocation d\u003d500}\"}\u0027 limit 100;\n",
+      "dateUpdated": "Sep 16, 2016 10:35:42 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "sensor_id",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "sensor_type",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "sensor_id",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1473237048724_-1034690254",
+      "id": "20160907-013048_1797512592",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "sensor_id\tsensor_type\thive\twing\tfloor\tdeployment_date\tmaintenance_history\n78e8ecee-73f3-11e6-a79b-b8e85621f222\thumidity\t2\tNorth\t17\tSat Jul 02 00:00:00 PDT 2016\tRepalced IC30486. \n78e8eeb8-73f3-11e6-bea8-b8e85621f222\tmovement\t2\tSouth\t17\tSat Apr 23 00:00:00 PDT 2016\tRepalced IC30486. \n78e8f07a-73f3-11e6-90af-b8e85621f222\thumidity\t2\tWest\t17\tMon Apr 04 00:00:00 PDT 2016\tNeed service update in 10 days. \n78e8f25c-73f3-11e6-8bd0-b8e85621f222\tmovement\t2\tWest\t18\tWed May 04 00:00:00 PDT 2016\tNeed service update in 10 days. \n78e8f41e-73f3-11e6-8200-b8e85621f222\thumidity\t2\tEast\t18\tFri Apr 08 00:00:00 PDT 2016\tRepalced IC30486. \n78e8f600-73f3-11e6-8615-b8e85621f222\thumidity\t2\tSouth\t19\tTue Apr 19 00:00:00 PDT 2016\tRepalced IC30486. \n78e8f7c0-73f3-11e6-b884-b8e85621f222\thumidity\t2\tSouth\t19\tThu Mar 17 00:00:00 PDT 2016\tRepalced IC666789. \n78e8f982-73f3-11e6-9e0c-b8e85621f222\tmovement\t2\tWest\t19\tFri Jun 17 00:00:00 PDT 2016\tRepalced IC666789. \n78e8fb45-73f3-11e6-a6e9-b8e85621f222\thumidity\t2\tNorth\t19\tThu Apr 14 00:00:00 PDT 2016\tServiced without issues. \n78e8fd05-73f3-11e6-985d-b8e85621f222\thumidity\t2\tSouth\t19\tTue Mar 15 00:00:00 PDT 2016\tRepalced IC30486. \n78e8fee6-73f3-11e6-a81b-b8e85621f222\ttemperature\t2\tNorth\t20\tWed Mar 23 00:00:00 PDT 2016\tNeed service update in 10 days. \n78e900a8-73f3-11e6-910e-b8e85621f222\ttemperature\t2\tNorth\t20\tTue Jun 07 00:00:00 PDT 2016\tRepalced IC30486. \n78e90359-73f3-11e6-8863-b8e85621f222\ttemperature\t2\tNorth\t20\tSun Apr 03 00:00:00 PDT 2016\tServiced without issues. \n78e905ee-73f3-11e6-a044-b8e85621f222\tmovement\t2\tEast\t21\tSat Apr 02 00:00:00 PDT 2016\tRepalced IC666789. \n78e907c5-73f3-11e6-a172-b8e85621f222\ttemperature\t2\tWest\t21\tFri Jun 03 00:00:00 PDT 2016\tRepalced IC666789. \n78e90a9e-73f3-11e6-be11-b8e85621f222\ttemperature\t2\tNorth\t21\tSat Mar 26 00:00:00 PDT 2016\tNeed service update in 10 days. \n78e90e54-73f3-11e6-8af3-b8e85621f222\tmovement\t2\tSouth\t22\tSat Jun 11 00:00:00 PDT 2016\tNeed service update in 10 days. \n78e9120a-73f3-11e6-a7bf-b8e85621f222\thumidity\t2\tSouth\t22\tTue Jun 14 00:00:00 PDT 2016\tNeed service update in 10 days. \n78e915e6-73f3-11e6-83c4-b8e85621f222\tmovement\t2\tEast\t23\tMon Jun 06 00:00:00 PDT 2016\tNeed service update in 10 days. \n78e919a8-73f3-11e6-b954-b8e85621f222\tmovement\t2\tWest\t23\tFri Mar 11 00:00:00 PST 2016\tServiced without issues. \n78e91c33-73f3-11e6-9600-b8e85621f222\ttemperature\t2\tSouth\t23\tFri Apr 22 00:00:00 PDT 2016\tRepalced IC30486. \n78e91e11-73f3-11e6-a197-b8e85621f222\ttemperature\t2\tEast\t23\tTue May 03 00:00:00 PDT 2016\tServiced without issues. \n78e921f8-73f3-11e6-879c-b8e85621f222\ttemperature\t2\tWest\t23\tWed May 11 00:00:00 PDT 2016\tServiced without issues. \n78e925cc-73f3-11e6-a629-b8e85621f222\ttemperature\t2\tEast\t24\tThu Apr 07 00:00:00 PDT 2016\tNeed service update in 10 days. \n78e929a1-73f3-11e6-bf93-b8e85621f222\ttemperature\t2\tSouth\t24\tTue Jun 21 00:00:00 PDT 2016\tRepalced IC30486. \n78e92cf3-73f3-11e6-a06e-b8e85621f222\thumidity\t2\tWest\t24\tSun May 22 00:00:00 PDT 2016\tRepalced IC666789. \n78e92ef3-73f3-11e6-ac9c-b8e85621f222\ttemperature\t2\tEast\t24\tWed May 11 00:00:00 PDT 2016\tRepalced IC30486. \n78e93170-73f3-11e6-908d-b8e85621f222\ttemperature\t2\tSouth\t24\tSun Jun 26 00:00:00 PDT 2016\tServiced without issues. \n78e933c0-73f3-11e6-b7a6-b8e85621f222\ttemperature\t2\tWest\t25\tThu Apr 28 00:00:00 PDT 2016\tRepalced IC666789. \n78e93559-73f3-11e6-8ec2-b8e85621f222\ttemperature\t2\tNorth\t25\tTue Apr 05 00:00:00 PDT 2016\tServiced without issues. \n78e936e8-73f3-11e6-b728-b8e85621f222\ttemperature\t2\tWest\t25\tFri May 27 00:00:00 PDT 2016\tRepalced IC30486. \n78e93899-73f3-11e6-8d0a-b8e85621f222\tmovement\t2\tWest\t26\tSat Apr 23 00:00:00 PDT 2016\tServiced without issues. \n78e93a28-73f3-11e6-96be-b8e85621f222\tmovement\t2\tWest\t26\tSun Mar 27 00:00:00 PDT 2016\tRepalced IC666789. \n78e93bb8-73f3-11e6-8dea-b8e85621f222\thumidity\t2\tSouth\t26\tWed Jun 22 00:00:00 PDT 2016\tRepalced IC666789. \n78e93d47-73f3-11e6-8ee9-b8e85621f222\ttemperature\t2\tWest\t26\tWed Jun 01 00:00:00 PDT 2016\tRepalced IC30486. \n78e93ef5-73f3-11e6-8a8b-b8e85621f222\tmovement\t2\tNorth\t27\tThu Jun 23 00:00:00 PDT 2016\tRepalced IC666789. \n78e94085-73f3-11e6-8fbc-b8e85621f222\ttemperature\t2\tSouth\t27\tSun Jun 05 00:00:00 PDT 2016\tServiced without issues. \n78e94217-73f3-11e6-bd84-b8e85621f222\thumidity\t2\tSouth\t27\tThu May 05 00:00:00 PDT 2016\tNeed service update in 10 days. \n78e943a6-73f3-11e6-bead-b8e85621f222\thumidity\t2\tWest\t27\tMon Jun 13 00:00:00 PDT 2016\tRepalced IC30486. \n78e9454a-73f3-11e6-a0d3-b8e85621f222\thumidity\t2\tSouth\t28\tThu Mar 31 00:00:00 PDT 2016\tRepalced IC666789. \n78e946e3-73f3-11e6-b2d3-b8e85621f222\thumidity\t2\tSouth\t28\tSat Apr 09 00:00:00 PDT 2016\tRepalced IC666789. \n78e94875-73f3-11e6-86be-b8e85621f222\thumidity\t2\tEast\t28\tThu May 19 00:00:00 PDT 2016\tRepalced IC666789. \n78e949f8-73f3-11e6-8a8f-b8e85621f222\thumidity\t2\tSouth\t28\tMon Jun 13 00:00:00 PDT 2016\tRepalced IC666789. \n78e94b8a-73f3-11e6-817a-b8e85621f222\ttemperature\t2\tSouth\t28\tThu Apr 07 00:00:00 PDT 2016\tServiced without issues. \n78e94d2e-73f3-11e6-b893-b8e85621f222\ttemperature\t2\tWest\t29\tThu Jun 16 00:00:00 PDT 2016\tNeed service update in 10 days. \n78e94eb5-73f3-11e6-90b9-b8e85621f222\thumidity\t2\tEast\t29\tWed Jun 22 00:00:00 PDT 2016\tRepalced IC30486. \n78e95045-73f3-11e6-be61-b8e85621f222\thumidity\t2\tWest\t29\tMon Apr 18 00:00:00 PDT 2016\tRepalced IC666789. \n78e951ca-73f3-11e6-a902-b8e85621f222\ttemperature\t2\tEast\t29\tTue May 03 00:00:00 PDT 2016\tRepalced IC30486. \n78e9536e-73f3-11e6-b95a-b8e85621f222\thumidity\t2\tEast\t30\tSun May 29 00:00:00 PDT 2016\tServiced without issues. \n78e954fd-73f3-11e6-8ac9-b8e85621f222\thumidity\t2\tWest\t30\tSun Jun 05 00:00:00 PDT 2016\tRepalced IC30486. \n78e9568f-73f3-11e6-9869-b8e85621f222\tmovement\t2\tNorth\t30\tSat May 07 00:00:00 PDT 2016\tServiced without issues. \n78e9581e-73f3-11e6-afac-b8e85621f222\tmovement\t2\tNorth\t30\tTue Apr 05 00:00:00 PDT 2016\tRepalced IC666789. \n78e95a94-73f3-11e6-a06e-b8e85621f222\thumidity\t2\tWest\t31\tFri Apr 01 00:00:00 PDT 2016\tRepalced IC666789. \n78e95c42-73f3-11e6-a462-b8e85621f222\tmovement\t2\tNorth\t31\tSun May 29 00:00:00 PDT 2016\tNeed service update in 10 days. \n78e95de6-73f3-11e6-a6ec-b8e85621f222\thumidity\t2\tWest\t32\tTue May 24 00:00:00 PDT 2016\tNeed service update in 10 days. \n78e95f80-73f3-11e6-8c39-b8e85621f222\tmovement\t2\tEast\t32\tSat May 14 00:00:00 PDT 2016\tServiced without issues. \n78e9610f-73f3-11e6-87dd-b8e85621f222\thumidity\t2\tNorth\t32\tSun Mar 27 00:00:00 PDT 2016\tRepalced IC666789. \n78e962b3-73f3-11e6-a9a7-b8e85621f222\ttemperature\t2\tSouth\t33\tThu May 05 00:00:00 PDT 2016\tRepalced IC30486. \n78e9644c-73f3-11e6-b005-b8e85621f222\tmovement\t2\tEast\t33\tFri Jun 03 00:00:00 PDT 2016\tServiced without issues. \n78e965de-73f3-11e6-81d2-b8e85621f222\tmovement\t2\tSouth\t33\tThu Mar 10 00:00:00 PST 2016\tServiced without issues. \n78e9676e-73f3-11e6-bdbb-b8e85621f222\ttemperature\t2\tSouth\t33\tSat Jul 02 00:00:00 PDT 2016\tNeed service update in 10 days. \n78e968f3-73f3-11e6-aea9-b8e85621f222\thumidity\t2\tSouth\t33\tSun Jun 12 00:00:00 PDT 2016\tRepalced IC666789. \n78e96a99-73f3-11e6-90b1-b8e85621f222\tmovement\t2\tSouth\t34\tTue Jul 05 00:00:00 PDT 2016\tRepalced IC30486. \n78e96c1e-73f3-11e6-ad8c-b8e85621f222\tmovement\t2\tWest\t34\tThu Jun 02 00:00:00 PDT 2016\tNeed service update in 10 days. \n78e96dae-73f3-11e6-8aa1-b8e85621f222\ttemperature\t2\tEast\t34\tWed Apr 27 00:00:00 PDT 2016\tServiced without issues. \n78e96f51-73f3-11e6-aaef-b8e85621f222\thumidity\t2\tSouth\t35\tSun Apr 24 00:00:00 PDT 2016\tNeed service update in 10 days. \n78e970eb-73f3-11e6-99d6-b8e85621f222\thumidity\t2\tNorth\t35\tTue Jun 14 00:00:00 PDT 2016\tServiced without issues. \n78e9728f-73f3-11e6-b1ee-b8e85621f222\tmovement\t2\tWest\t36\tSun Mar 20 00:00:00 PDT 2016\tNeed service update in 10 days. \n78e97421-73f3-11e6-9de8-b8e85621f222\ttemperature\t2\tNorth\t36\tTue Apr 26 00:00:00 PDT 2016\tServiced without issues. \n78e975a3-73f3-11e6-a4d4-b8e85621f222\ttemperature\t2\tSouth\t36\tSun Jul 03 00:00:00 PDT 2016\tRepalced IC30486. \n78e97735-73f3-11e6-a41c-b8e85621f222\tmovement\t2\tWest\t36\tWed Jun 29 00:00:00 PDT 2016\tServiced without issues. \n78e978c5-73f3-11e6-9902-b8e85621f222\ttemperature\t2\tWest\t36\tSat Apr 16 00:00:00 PDT 2016\tRepalced IC30486. \n78e97a61-73f3-11e6-80fc-b8e85621f222\ttemperature\t2\tWest\t37\tMon Apr 18 00:00:00 PDT 2016\tServiced without issues. \n78e97bfa-73f3-11e6-b532-b8e85621f222\ttemperature\t2\tNorth\t37\tSun Mar 20 00:00:00 PDT 2016\tRepalced IC666789. \n78e97d80-73f3-11e6-a04a-b8e85621f222\tmovement\t2\tNorth\t37\tTue May 03 00:00:00 PDT 2016\tRepalced IC666789. \n78e97f0f-73f3-11e6-9d74-b8e85621f222\thumidity\t2\tNorth\t37\tWed Jun 29 00:00:00 PDT 2016\tRepalced IC30486. \n78e980b3-73f3-11e6-a0ac-b8e85621f222\ttemperature\t2\tWest\t38\tSat Jun 18 00:00:00 PDT 2016\tNeed service update in 10 days. \n78e98242-73f3-11e6-aec0-b8e85621f222\tmovement\t2\tSouth\t38\tThu Mar 24 00:00:00 PDT 2016\tServiced without issues. \n78e983de-73f3-11e6-8e28-b8e85621f222\tmovement\t2\tSouth\t39\tSat Jun 18 00:00:00 PDT 2016\tRepalced IC666789. \n78e9856e-73f3-11e6-8f73-b8e85621f222\ttemperature\t2\tEast\t39\tThu Apr 21 00:00:00 PDT 2016\tNeed service update in 10 days. \n78e98ad1-73f3-11e6-bebe-b8e85621f222\ttemperature\t2\tSouth\t39\tWed May 04 00:00:00 PDT 2016\tRepalced IC666789. \n78e98f0a-73f3-11e6-8e2d-b8e85621f222\ttemperature\t2\tSouth\t40\tMon Jun 27 00:00:00 PDT 2016\tServiced without issues. \n78e990f3-73f3-11e6-a6cc-b8e85621f222\tmovement\t2\tWest\t40\tFri Apr 01 00:00:00 PDT 2016\tRepalced IC666789. \n78e992a3-73f3-11e6-b348-b8e85621f222\thumidity\t2\tWest\t40\tSat May 28 00:00:00 PDT 2016\tRepalced IC30486. \n78e99478-73f3-11e6-88d4-b8e85621f222\ttemperature\t2\tEast\t41\tTue May 03 00:00:00 PDT 2016\tRepalced IC666789. \n78e99626-73f3-11e6-92b1-b8e85621f222\tmovement\t2\tNorth\t41\tFri Jul 01 00:00:00 PDT 2016\tRepalced IC30486. \n78e997b5-73f3-11e6-b7b4-b8e85621f222\thumidity\t2\tWest\t41\tMon May 02 00:00:00 PDT 2016\tRepalced IC666789. \n78e99947-73f3-11e6-a49b-b8e85621f222\tmovement\t2\tSouth\t41\tTue Jun 14 00:00:00 PDT 2016\tNeed service update in 10 days. \n78e99aeb-73f3-11e6-9d6d-b8e85621f222\thumidity\t2\tSouth\t42\tSun May 01 00:00:00 PDT 2016\tRepalced IC30486. \n78e99c7a-73f3-11e6-9efc-b8e85621f222\tmovement\t2\tEast\t42\tThu May 05 00:00:00 PDT 2016\tServiced without issues. \n78e99ed9-73f3-11e6-a804-b8e85621f222\ttemperature\t2\tWest\t42\tSun Apr 10 00:00:00 PDT 2016\tNeed service update in 10 days. \n78e9a151-73f3-11e6-8971-b8e85621f222\thumidity\t2\tWest\t43\tFri May 27 00:00:00 PDT 2016\tRepalced IC666789. \n78e9a3a8-73f3-11e6-90c5-b8e85621f222\thumidity\t2\tSouth\t43\tMon Apr 04 00:00:00 PDT 2016\tNeed service update in 10 days. \n78e9a60a-73f3-11e6-a50b-b8e85621f222\tmovement\t2\tNorth\t43\tTue Jul 05 00:00:00 PDT 2016\tRepalced IC30486. \n78e9a878-73f3-11e6-b256-b8e85621f222\thumidity\t2\tEast\t44\tMon Jun 13 00:00:00 PDT 2016\tServiced without issues. \n78e9aacf-73f3-11e6-a217-b8e85621f222\thumidity\t2\tSouth\t44\tFri Jun 24 00:00:00 PDT 2016\tServiced without issues. \n78e9ad1c-73f3-11e6-b697-b8e85621f222\ttemperature\t2\tWest\t44\tMon Jun 20 00:00:00 PDT 2016\tServiced without issues. \n78ea57ab-73f3-11e6-8059-b8e85621f222\thumidity\t4\tEast\t17\tFri Mar 11 00:00:00 PST 2016\tRepalced IC30486. \n78ea593a-73f3-11e6-ac17-b8e85621f222\thumidity\t4\tSouth\t17\tTue May 03 00:00:00 PDT 2016\tServiced without issues. \n78ea5ac0-73f3-11e6-9505-b8e85621f222\ttemperature\t4\tWest\t17\tFri Jul 01 00:00:00 PDT 2016\tServiced without issues. \n"
+      },
+      "dateCreated": "Sep 7, 2016 1:30:48 AM",
+      "dateStarted": "Sep 16, 2016 10:35:43 AM",
+      "dateFinished": "Sep 16, 2016 10:35:43 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1473237473305_596874945",
+      "id": "20160907-013753_987880448",
+      "dateCreated": "Sep 7, 2016 1:37:53 AM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "3. GML - Solr : GeoSpatial Search",
+  "id": "2BX73Y498",
+  "angularObjects": {
+    "2BVUSYNT7:shared_process": [],
+    "2BVNSCC87:shared_process": [],
+    "2BV5CMDRJ:shared_process": [],
+    "2BURGVYUU:shared_process": [],
+    "2BXASZ6DR:shared_process": [],
+    "2BUPXZDUP:shared_process": [],
+    "2BVT2JK3P:shared_process": [],
+    "2BWHEYP7Q:shared_process": [],
+    "2BVZCXEBF:shared_process": [],
+    "2BUS52J8T:shared_process": [],
+    "2BUPPD2UZ:shared_process": [],
+    "2BXNVQ4BK:shared_process": [],
+    "2BWRV2UGT:shared_process": [],
+    "2BV6MVK7C:shared_process": [],
+    "2BW98HZUC:shared_process": [],
+    "2BWMQWBTP:shared_process": [],
+    "2BWND52DS:shared_process": []
+  },
+  "config": {
+    "looknfeel": "default"
+  },
+  "info": {}
+}
