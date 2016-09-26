@@ -8,7 +8,7 @@
 <br>
 
 #### Procedures to set up the environment:
-##### 1. Create the corresponding Cassandta tables using [this cql file](./datamodel/demo_app_data_model.cql)
+##### 1. Create the corresponding Cassandra tables using [this cql file](./datamodel/demo_app_data_model.cql)
 ##### 2. ...
 
 
