@@ -17,6 +17,7 @@
 - zeppelin/notebok folder	- contains Zeppelin notebooks to extract device data from the Cassandra table using CQL and Solr Queries
 
 
+<p>
 
 ### The content below to be developed
 
