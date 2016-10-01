@@ -2,9 +2,9 @@
 
 ### This is my bootcamp project at DataStax
 
-Presentation folder -	contains the presentation for positioning DSE as the IoT data platform
+- Presentation folder -	contains the presentation for positioning DSE as the IoT data platform
 
-datamodel	- contains cql to populate the required cassandra tables
+- datamodel	- contains cql to populate the required cassandra tables
 
 demoIOT	- contains Scala code for spark streaming for ingesting IoT device data, transforming it and storing it into Cassandra tables; contains Scala code for spark job for processing daily rollup
 
